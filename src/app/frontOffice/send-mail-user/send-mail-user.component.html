@@ -1,0 +1,75 @@
+<app-preloader-user *ngIf="isLoading"></app-preloader-user>
+<div class="body-overlay" id="body-overlay"></div>
+
+<app-navbar2-user></app-navbar2-user>
+
+<br><br><br><br><br><br><br><br><br><br>
+<div class="counter-area pd-bottom-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="section-title mb-0">
+          <h6 class="sub-title right-line">Get in touch</h6>
+          <h2 class="title">Send An Email</h2>
+          <p class="content pb-3">Sending emails through our website is a convenient and efficient way to communicate, so don't hesitate to take advantage of this feature and send us a message today!
+          </p>
+          <ul class="social-media style-base pt-3">
+            <li>
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-8 mt-5 mt-lg-0">
+        <form class="contact-form-inner  mt-5 mt-md-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="single-input-inner style-bg-border">
+                <input type="text" [(ngModel)]="username" name="username" placeholder="Your Email Address">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="single-input-inner style-bg-border">
+                <input type="password" [(ngModel)]="password" name="password" placeholder="Your Email Password">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="single-input-inner style-bg-border">
+                <input type="text" [(ngModel)]="recipient" name="recipient" placeholder="Recipient">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="single-input-inner style-bg-border">
+                <input type="text" [(ngModel)]="subject" name="subject" placeholder="Subject">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <textarea [(ngModel)]="body" name="body" placeholder="Message"></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-base" type="button" (click)="sendEmail()">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br>
+<app-footer-user></app-footer-user>
+

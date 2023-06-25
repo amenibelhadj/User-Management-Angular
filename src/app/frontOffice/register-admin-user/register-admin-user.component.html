@@ -1,0 +1,84 @@
+<app-preloader-user *ngIf="isLoading"></app-preloader-user>
+<div class="body-overlay" id="body-overlay"></div>
+
+<app-navbar-user></app-navbar-user>
+<br><br><br>
+<!-- signup-page-Start -->
+<div class="signup-page-area pd-top-120 pd-bottom-120">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="section-title text-center">
+        <h6 class="sub-title double-line">Admin Registration</h6>
+        <h2 class="title">Gain access to exclusive features.</h2>
+      </div>
+      <div class="col-xl-6 col-lg-7">
+        <form #addForm="ngForm" class="signin-inner"(ngSubmit)="register(addForm)" >
+          <div class="row">
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input
+                  name="firstname"
+                  [(ngModel)]="registerRequest.firstname"
+                  #firstname="ngModel"
+                  pattern="[a-zA-Z ]*"
+                  type="text"
+                  placeholder="First Name">
+              </div>
+            </div>
+            <div class="col-12 text-center fw-bold">
+              <span class="alert-warning" role="alert" style="display: block;" *ngIf="firstname.touched && firstname?.errors?.['pattern']" >Please use only letters. <br></span>
+            </div>
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input
+                  name="lastname"
+                  [(ngModel)]="registerRequest.lastname"
+                  #lastname="ngModel"
+                  required
+                  type="text"
+                  placeholder="Last Name">
+              </div>
+            </div>
+            <div class="col-12 text-center fw-bold">
+              <span class="alert-warning" role="alert" style="display: block;"*ngIf="lastname.touched && lastname?.errors?.['required']" >Lastname is required.<br></span>
+            </div>
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input
+                  type="email"
+                  name="email"
+                  [(ngModel)]="registerRequest.email"
+                  #email="ngModel"
+                  required
+                  placeholder="Email">
+              </div>
+            </div>
+            <div class="col-12 text-center fw-bold">
+              <span class="alert-warning" role="alert" style="display: block;"  *ngIf="email.touched && email?.errors?.['required']" >Email is required.<br></span>
+            </div>
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="registerRequest.password"
+                  minlength="5"
+                  required
+                  #password="ngModel"
+                  placeholder="Password">
+              </div>
+            </div>
+            <div class="col-12 text-center fw-bold">
+              <span class="alert-warning" role="alert" style="display: block;"  *ngIf="password.touched && password?.errors?.['minlength']" >Password must be at least 5 caracteres.<br></span>
+            </div>
+            <div class="col-12 mb-4">
+              <button type="submit" class="btn btn-base w-100">Create Account</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- signup-page-end -->
+<app-footer-user></app-footer-user>

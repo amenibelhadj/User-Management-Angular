@@ -1,0 +1,70 @@
+<!-- navbar start -->
+<div class="navbar-area">
+  <!-- navbar top start -->
+  <div class="navbar-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 text-md-left text-center">
+          <ul>
+            <li><p><i class="fa fa-map-marker"></i> 2072 Pinnickinick Street, WA 98370</p></li>
+            <li><p><i class="fa fa-envelope-o"></i>  noreply.pidev@gmail.com</p></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul class="topbar-right text-md-right text-center">
+            <li class="social-area">
+              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-area-1 navbar-area navbar-expand-lg">
+    <div class="container nav-container">
+      <div class="responsive-mobile-menu">
+        <button class="menu toggle-btn d-block d-lg-none" data-target="#edumint_main_menu"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-left"></span>
+          <span class="icon-right"></span>
+        </button>
+      </div>
+      <div class="logo">
+        <a (click)="redirectToHome()" style="cursor: pointer;"><img src="/assets/front/img/yes.png" alt="img"></a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="edumint_main_menu">
+        <ul class="navbar-nav menu-open">
+          <li class="menu-item-has-children">
+            <a (click)="redirectToRegister()" style="cursor: pointer;">Registry</a>
+            <ul class="sub-menu">
+              <li><a (click)="redirectToRegisterAdmin()" style="cursor: pointer;">Administrator</a></li>
+              <li><a (click)="redirectToRegisterBuyer()" style="cursor: pointer;">Buyer</a></li>
+              <li><a (click)="redirectToRegisterVendor()" style="cursor: pointer;">Vendor</a></li>
+              <li><a (click)="redirectToRegisterLivreur()" style="cursor: pointer;">Deliveryman</a></li>
+              <li><a (click)="redirectToRegisterProvider()" style="cursor: pointer;">Provider</a></li>
+
+            </ul>
+          </li>
+          <li><a style="cursor: pointer;">Today's Deals </a></li>
+          <li class="menu-item-has-children">
+            <a style="cursor: pointer;">Customer Service</a>
+            <ul class="sub-menu">
+              <li><a (click)="redirectToQrCode()" style="cursor: pointer;">Customer Survey</a></li>
+            </ul>
+          </li>
+          <li><a style="cursor: pointer;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="nav-right-part nav-right-part-desktop">
+        <a class="btn" (click)="redirectToAuthenticate()">Sign In</a>
+        <a class="btn btn-base" (click)="redirectToRegister()">Sign Up</a>
+        <a class="search-bar" href="#"><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- navbar end -->

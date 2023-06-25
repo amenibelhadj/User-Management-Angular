@@ -1,0 +1,66 @@
+
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar" xmlns="http://www.w3.org/1999/html">
+  <div class="layout-container">
+    <app-menu-admin></app-menu-admin>
+    <div class="layout-page">
+      <app-navbar-admin></app-navbar-admin>
+      <div class="content-wrapper">
+        <!--content-->
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Register /</span> The User Is A..</h4>
+          <br><br>
+          <div class="container">
+            <div class="row align-content-center flex-column">
+              <div class="row">
+                <div class="row justify-content-center">
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title text-center font-weight-bold">Buyer</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="btn btn-primary btn-lg btn-block" (click)="redirectToRegisterBuyer()">Get Started</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title text-center font-weight-bold">Vendor</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="btn btn-info btn-lg btn-block" (click)="redirectToRegisterVendor()">Get Started</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title text-center font-weight-bold">Provider</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="btn btn-success btn-lg btn-block" (click)="redirectToRegisterProvider()">Get Started</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card text-center">
+                      <div class="card-body">
+                        <h5 class="card-title text-center font-weight-bold">Deliveryman</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button class="btn btn-warning btn-lg btn-block" (click)="redirectToRegisterDeliveryman()">Get Started</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <app-footer-admin></app-footer-admin>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+  </div>
+</div>
+

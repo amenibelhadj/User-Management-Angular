@@ -1,0 +1,79 @@
+
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar">
+  <div class="layout-container">
+    <app-menu-admin></app-menu-admin>
+    <div class="layout-page">
+      <app-navbar-admin></app-navbar-admin>
+      <div class="content-wrapper">
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <!-- Basic Bootstrap Table -->
+          <div class="card">
+            <h5 class="card-header text-primary fw-bold">CocoMarket Users  <i class="menu-icon tf-icons bx bx-show-alt"></i></h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>
+                    <span style="margin-right: 30px;">Name</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('lastname,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info" (click)="onSortChange('lastname,desc')"></span>
+                  </th>
+                  <th>
+                    <span style="margin-right: 120px;">Email</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('email,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info"(click)="onSortChange('email,desc')"></span></th>
+                  <th>
+                    <span style="margin-right: 10px;">Role</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('role,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info"(click)="onSortChange('role,desc')"></span></th>
+                  <th>
+                    <span style="margin-right: 30px;">Company</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('company,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info"(click)="onSortChange('company,desc')"></span></th>
+                  <th>
+                    <span style="margin-right: 110px;">Address</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('address,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info"(click)="onSortChange('address,desc')"></span></th>
+                  <th>
+                    <span style="margin-right: 10px;">Status</span>
+                    <span class="tf-icons bx bx-up-arrow-alt btn-outline-primary" (click)="onSortChange('statusUser,asc')"></span>
+                    <span class="tf-icons bx bx-down-arrow-alt btn-outline-info"(click)="onSortChange('statusUser,desc')"></span></th>
+                </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: pageNumber }" (dblclick)="onUserClick(user.id)">
+                  <td><span class="badge badge-center rounded-pill bg-label-primary">{{user.id}}</span></td>
+                  <td  class="text-capitalize">{{user.lastname}} {{user.firstname}}</td>
+                  <td>{{user.email}}</td>
+                  <td><span [ngClass]="{' text-danger ': user.role==='VENDOR',
+                                        ' text-primary': user.role==='ADMIN',
+                                         ' text-warning': user.role==='PROVIDER',
+                                         ' text-info': user.role==='BUYER',
+                                         ' text-success': user.role==='LIVREUR'
+                                         }">{{user.role}}</span></td>
+                  <td>{{user.company}}</td>
+                  <td>{{user.address}}</td>
+                  <td><span [ngClass]="{' text-info': user.statusUser==='ACTIVE',
+                                        ' text-danger': user.statusUser==='BANNED'}">{{user.statusUser}}</span></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--/ Basic Bootstrap Table -->
+
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+                  <pagination-controls (pageChange)="pageNumber = $event" ></pagination-controls>
+          </div>
+        </div>
+        <app-footer-admin></app-footer-admin>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+  </div>
+</div>
+

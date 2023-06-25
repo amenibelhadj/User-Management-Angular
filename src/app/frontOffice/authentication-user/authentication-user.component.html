@@ -1,0 +1,53 @@
+<!-- search popup start-->
+<div class="td-search-popup" id="td-search-popup">
+  <form action="index.html" class="search-form">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search.....">
+    </div>
+    <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<!-- search popup end-->
+<div class="body-overlay" id="body-overlay"></div>
+
+<app-navbar-user></app-navbar-user>
+
+<br><br><br>
+<!-- signin-page-Start -->
+<div class="signin-page-area pd-top-120 pd-bottom-120">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="section-title text-center">
+        <h6 class="sub-title double-line">Authentication</h6>
+        <h2 class="title">Sign in with credentials.</h2>
+      </div>
+      <div class="col-xl-6 col-lg-7">
+        <form class="signin-inner" (submit)="onSubmit()">
+          <div class="row">
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <button class="btn btn-base w-100" type="submit">Sign In</button>
+            </div>
+            <div class="col-12 text-center">
+              <a (click)="redirectToForgot()" style="cursor: pointer;"><small>Forgot You Password ?</small></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- signin-page-end -->
+
+<app-footer-user></app-footer-user>
+
+

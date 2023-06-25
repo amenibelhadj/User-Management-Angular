@@ -1,0 +1,113 @@
+
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar" xmlns="http://www.w3.org/1999/html">
+  <div class="layout-container">
+    <app-menu-admin></app-menu-admin>
+    <div class="layout-page">
+      <app-navbar-admin></app-navbar-admin>
+      <div class="content-wrapper">
+        <!--content-->
+        <div class="container-xxl flex-grow-1 container-p-y">
+          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Account Details /</span> Details</h4>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card mb-4">
+                <h5 class="card-header">Profile Details</h5>
+                <!-- Account -->
+                <div class="card-body">
+                  <div class="d-flex align-items-start align-items-sm-center gap-4">
+                    <div *ngIf="logoData">
+                    <img
+                      [src]="logoData"
+                      alt="no logo"
+                      class="d-block rounded"
+                      height="100"
+                      width="100"
+                      id="uploadedAvatar"
+                    />
+                    </div>
+                    <div class="button-wrapper">
+                      <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                        <span class="d-none d-sm-block" (click)="onUpload()">Upload new photo</span>
+                        <i class="bx bx-upload d-block d-sm-none"></i>
+                        <input
+                          (change)="onFileSelected($event)" name="file"
+                          type="file"
+                          id="upload"
+                          class="account-file-input"
+                          hidden
+                          accept="image/png, image/jpeg"
+                        />
+                      </label>
+                      <button type="button" class="btn btn-outline-primary account-image-reset mb-4 me-2" (click)="redirectToShow()">
+                        <i class="bx bx-reset d-block d-sm-none"></i>
+                        <span class="d-none d-sm-block">Return</span>
+                      </button>
+                      <button type="button" class="btn btn-icon btn-outline-info mb-4 me-2" (click)="unbanUser(user.email)">
+                        <span class="tf-icons bx bx-user-check"></span>
+                      </button>
+                      <button type="button" class="btn btn-icon btn-outline-danger mb-4 me-2" (click)="banUser(user.email)">
+                        <span class="tf-icons bx bx-block"></span>
+                      </button>
+                      <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <div class="card-body">
+                  <div class="row">
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Name</label>
+                      <h5> {{user.firstname}} {{user.lastname}}</h5>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">E-mail</label>
+                      <h5>{{user.email}}</h5>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Company</label>
+                      <h5>{{user.company}}</h5>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Address</label>
+                      <h5>{{user.address}}</h5>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Account status</label>
+                      <h5><span [ngClass]="{'badge bg-label-info me-1': user.statusUser==='ACTIVE','badge bg-label-danger me-1': user.statusUser==='BANNED' }">{{user.statusUser}}</span></h5>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                      <label class="form-label">Position</label>
+                      <h5><span class="badge bg-label-info me-1">{{user.role}}</span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <!-- /Account -->
+              <div class="card">
+                <h5 class="card-header">Delete Account</h5>
+                <div class="card-body">
+                  <div class="mb-3 col-12 mb-0">
+                    <div class="alert alert-primary">
+                      <h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
+                      <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
+                    </div>
+                  </div>
+                  <form id="formAccountDeactivation" onsubmit="return false">
+                    <button type="submit" class="btn btn-primary deactivate-account" (click)="deleteUser(user.id)">Delete Account</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--content-->
+        <br><br>
+        <app-footer-admin></app-footer-admin>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+<h1>Liste des emails</h1>
+<table>
+  <thead>
+  <tr>
+    <th>De</th>
+    <th>À</th>
+    <th>Objet</th>
+    <th>Date d'envoi</th>
+    <th>Date de réception</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let email of emails">
+    <td>{{ email.from }}</td>
+    <td>{{ email.to }}</td>
+    <td>{{ email.subject }}</td>
+    <td>{{ email.sentDate | date }}</td>
+    <td>{{ email.receivedDate | date }}</td>
+  </tr>
+  </tbody>
+</table>

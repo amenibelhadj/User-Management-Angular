@@ -1,0 +1,93 @@
+
+<!-- search popup start-->
+<div class="td-search-popup" id="td-search-popup">
+  <form action="index.html" class="search-form">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search.....">
+    </div>
+    <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<!-- search popup end-->
+<div class="body-overlay" id="body-overlay"></div>
+
+<app-navbar-user></app-navbar-user>
+<br><br><br><br><br><br><br>
+<!-- work area start -->
+<div class="work-area pd-top-110">
+  <div class="container">
+    <div class="section-title">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <h6 class="sub-title right-line">What we do</h6>
+          <h2 class="title">How it works?</h2>
+        </div>
+        <div class="col-lg-6 align-self-center">
+          <p class="content mt-lg-0">
+            Our platform offers a wide selection of products for buyers, while allowing vendors to showcase their offerings to a wider audience.
+            Providers can offer their specialized services, and deliverymen ensure timely delivery of your orders.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6" style="cursor: pointer;">
+        <div class="single-intro-inner style-icon-bg bg-gray text-center">
+          <div class="thumb">
+            <img src="/assets/front/img/icon/buyer.png" alt="img">
+            <div class="intro-count">1</div>
+          </div>
+          <div class="details">
+            <h5>As a Customer</h5>
+            <p>you can explore a wide selection of products and make purchases from the comfort of your home.</p>
+            <a class="read-more-text" (click)="redirectToRegisterBuyer()">Join Us <i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" style="cursor: pointer;">
+        <div class="single-intro-inner style-icon-bg bg-gray text-center">
+          <div class="thumb">
+            <img src="/assets/front/img/icon/vendor.png" alt="img">
+            <div class="intro-count">2</div>
+          </div>
+          <div class="details">
+            <h5>As a Vendor</h5>
+            <p>you can showcase your products or services to a wider audience and increase your sales potential.</p>
+            <a class="read-more-text" (click)="redirectToRegisterVendor()">Join Us <i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" style="cursor: pointer;">
+        <div class="single-intro-inner style-icon-bg bg-gray text-center">
+          <div class="thumb">
+            <img src="/assets/front/img/icon/provider.png" alt="img">
+            <div class="intro-count">3</div>
+          </div>
+          <div class="details">
+            <h5>As a Provider</h5>
+            <p> you can offer your specialized services to customers, thus increasing your customer base.</p>
+            <a class="read-more-text" (click)="redirectToRegisterProvider()">Join Us <i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" style="cursor: pointer;">
+        <div class="single-intro-inner style-icon-bg bg-gray text-center">
+          <div class="thumb">
+            <img src="/assets/front/img/icon/delivery.png" alt="img">
+            <div class="intro-count">4</div>
+          </div>
+          <div class="details">
+            <h5>As a Deliveryman</h5>
+            <p> you play a crucial role in ensuring timely and efficient delivery of orders to our customers.</p>
+            <a class="read-more-text" (click)="redirectToRegisterDelivery()">Join Us <i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- work area end -->
+<br><br><br>
+<app-footer-user></app-footer-user>
+
+
