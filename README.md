@@ -1,27 +1,44 @@
-# PidevCocomarketAngular
+## Angular User Management Features
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+This README provides an overview of the user management features implemented in an Angular application. The user management functionality handles various tasks related to user authentication, registration, and authorization within the application. Below are the key features and their descriptions:
 
-## Development server
+### 1. User Registration
+- Allows new users to create an account by providing their desired username, email, and password.
+- Validates user inputs, such as password strength and email format.
+- Performs necessary checks, such as username or email availability, to prevent duplicates.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 2. User Login
+- Enables users to authenticate themselves using their registered credentials (username/email and password).
+- Performs authentication checks, such as verifying the provided credentials against stored user data.
+- Generates and assigns an authentication token (e.g., JWT) to the user upon successful login.
 
-## Code scaffolding
+### 3. User Logout
+- Provides a mechanism for users to log out of their accounts, effectively invalidating their authentication token.
+- Clears any stored authentication data and redirects the user to an appropriate landing page.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 4. User Profile Management
+- Allows users to view and edit their profile information, such as name, email, profile picture, or other relevant details.
+- Validates and updates the user's profile data, ensuring consistency and accuracy.
+- Provides functionality to upload and manage profile pictures or other media.
 
-## Build
+### 5. User Authentication Guards
+- Implements route guards to protect certain application routes from unauthorized access.
+- Checks for valid authentication tokens before granting access to protected routes.
+- Redirects unauthenticated users to the login page or displays an appropriate error message.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 6. User Role-Based Access Control
+- Implements role-based access control (RBAC) to differentiate between different user roles (e.g., admin, regular user).
+- Restricts access to certain application features or resources based on the user's role.
+- Controls visibility and functionality of UI elements based on the user's assigned role.
 
-## Running unit tests
+### 7. Password Reset
+- Provides a mechanism for users to reset their forgotten passwords.
+- Sends password reset instructions to the user's registered email.
+- Validates the password reset request and allows users to set a new password.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 8. User Data Storage
+- Stores user-related information securely in a database or other persistent storage.
+- Implements secure data access and retrieval mechanisms.
+- Ensures data privacy and protection through appropriate security measures.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+These features collectively provide a comprehensive user management system in an Angular application, enabling secure authentication, registration, and profile management for the application users.
